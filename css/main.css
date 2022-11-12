@@ -12,11 +12,121 @@ $color4:
   padding: 0;
 }
 
+@font-face {
+  font-family: "cairo";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Cairo-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "supermolot";
+  src: url("../fonts/TTSupermolotNeue-Regular.woff") format("woff");
+}
 body {
-  font-size: 16px;
-  line-height: 24px; /* 150% from font-size */
-  word-spacing: 24px; /* 150% from font-size */
-  letter-spacing: 0.8px; /* 5% from font-size */
-  color: #3c3c3c;
-  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-family: "cairo", sans-serif;
+}
+
+.contNav1 {
+  background-color: #f5f5f5;
+}
+.contNav1 .nav1 {
+  max-width: 1480px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.contNav1 .nav1 .sosmed a {
+  text-decoration: none;
+  color: #939393;
+}
+.contNav1 .nav1 .sosmed a:hover {
+  color: inherit;
+}
+.contNav1 .nav1 .langAndSignUp a {
+  text-decoration: none;
+  color: #333;
+  padding: 0 10px;
+}
+.contNav1 .nav1 .langAndSignUp a:hover {
+  background-color: #e3e1e1;
+}
+.contNav1 .nav1 ul {
+  display: flex;
+  gap: 10px;
+}
+.contNav1 .nav1 ul li {
+  list-style: none;
+}
+
+.contNav2 {
+  background-color: #000;
+}
+.contNav2 .nav2 {
+  max-width: 1480px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.contNav2 .nav2 .left {
+  margin-top: 20px;
+}
+.contNav2 .nav2 .left .logoSBK {
+  width: 250px;
+}
+.contNav2 .nav2 .left .logoFIM {
+  width: 50px;
+}
+.contNav2 .nav2 .right {
+  text-align: center;
+}
+.contNav2 .nav2 .right ul {
+  display: flex;
+  gap: 30px;
+}
+.contNav2 .nav2 .right ul li {
+  list-style: none;
+  padding: 0 0 10px;
+}
+.contNav2 .nav2 .right ul li a {
+  text-decoration: none;
+  color: #939393;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.contNav2 .nav2 .right ul li a p {
+  font-size: 12px;
+  margin-top: -10px;
+}
+.contNav2 .nav2 .right ul .videoPass {
+  background-color: red;
+  padding: 0 15px;
+}
+.contNav2 .nav2 .right ul .videoPass a {
+  color: #fff;
+}
+
+.contNav3 {
+  background-color: #333;
+}
+.contNav3 .nav3 {
+  max-width: 1480px;
+  margin: auto;
+}
+.contNav3 .nav3 ul {
+  display: flex;
+  align-items: center;
+}
+.contNav3 .nav3 ul li {
+  list-style: none;
+}
+.contNav3 .nav3 ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 15px;
+  padding: 0 15px;
+}
+.contNav3 .nav3 ul li .menu {
+  font-size: 1.8rem;
+  padding: 0 15px 0 0;
 }/*# sourceMappingURL=main.css.map */
