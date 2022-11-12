@@ -1,0 +1,22 @@
+/*
+
+// VARIABLE WARNA = Masukkan warna.
+$color1:
+$color2:
+$color3:
+$color4:
+
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  line-height: 24px; /* 150% from font-size */
+  word-spacing: 24px; /* 150% from font-size */
+  letter-spacing: 0.8px; /* 5% from font-size */
+  color: #3c3c3c;
+  font-family: "Montserrat", sans-serif;
+}/*# sourceMappingURL=main.css.map */

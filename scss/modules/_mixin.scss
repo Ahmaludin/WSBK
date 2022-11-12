@@ -1,0 +1,11 @@
+@mixin nav($background-color, $width) {
+  width: 100vw;
+  background-color: $background-color;
+  nav {
+    display: flex;
+    width: $width;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

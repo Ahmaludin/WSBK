@@ -1,0 +1,27 @@
+// font-family: 'Lato', sans-serif;
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Open Sans', sans-serif;
+// font-family: 'Oswald', sans-serif;
+// font-family: 'Poppins', sans-serif;
+// font-family: 'Roboto', sans-serif;
+
+@use 'modules/mixin';
+@use 'modules/variable';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  line-height: 24px; /* 150% from font-size */
+  word-spacing: 24px; /* 150% from font-size */
+  letter-spacing: 0.8px; /* 5% from font-size */
+  color: variable.$color11;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container-nav {
+  // @include mixin.nav(variable.$color1, 70%);
+}
