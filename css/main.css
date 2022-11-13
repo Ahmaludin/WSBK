@@ -20,7 +20,7 @@ $color4:
 }
 @font-face {
   font-family: "supermolot";
-  src: url("../fonts/TTSupermolotNeue-Regular.woff") format("woff");
+  src: url("../fonts/TTSupermolotNeue-Regular.otf");
 }
 body {
   font-size: 18px;
@@ -152,9 +152,108 @@ body {
   font-size: 15px;
   padding: 0 15px;
 }
-.contNav3 .nav3 ul li .menu {
+.contNav3 .nav3 ul .menu {
+  width: 1rem;
   font-size: 1.8rem;
   padding: 0 15px 0 0;
   color: #fff;
   cursor: pointer;
+  padding: 0 15px;
+}
+.contNav3 .nav3 ul .bgMenuChanger {
+  background-color: rgb(60, 60, 60);
+}
+
+.menuList {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(60, 60, 60);
+  z-index: 99;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 60px 30px;
+}
+.menuList h4 {
+  color: #fff;
+  font-family: "supermolot", sans-serif;
+  font-size: 22px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.menuList h4 span {
+  font-size: 1rem;
+}
+.menuList ul li {
+  list-style: none;
+  margin-bottom: -8px;
+}
+.menuList ul li span {
+  color: red;
+  font-size: 10px;
+}
+.menuList ul li a {
+  color: #959595;
+  font-size: 15px;
+  text-decoration: none;
+}
+.menuList ul li a:hover {
+  text-decoration: underline;
+}
+
+.displayMenuList {
+  display: none;
+}
+
+.contHeader {
+  background-color: #000;
+}
+.contHeader header {
+  position: relative;
+  max-width: 1480px;
+  margin: auto;
+  display: flex;
+}
+.contHeader header img {
+  width: 100%;
+  display: block;
+}
+.contHeader header .banner1 {
+  width: 75%;
+}
+.contHeader header .banner2 {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+}
+.contHeader header .banner2 .playIcon {
+  position: absolute;
+  top: -5px;
+  left: 20px;
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: default;
+}
+.contHeader header .banner1,
+.contHeader header .newsHead {
+  position: relative;
+}
+.contHeader header .bannerTitle,
+.contHeader header .title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-family: "supermolot", sans-serif;
+  font-weight: bold;
+}
+.contHeader header .bannerTitle {
+  padding: 20px;
+  font-size: 2rem;
+}
+.contHeader header .title {
+  padding: 10px;
 }/*# sourceMappingURL=main.css.map */

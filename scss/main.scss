@@ -22,7 +22,7 @@
 
 @font-face {
   font-family: 'supermolot';
-  src: url('../fonts/TTSupermolotNeue-Regular.woff') format('woff');
+  src: url('../fonts/TTSupermolotNeue-Regular.otf');
 }
 
 body {
@@ -162,13 +162,116 @@ body {
           font-size: 15px;
           padding: 0 15px;
         }
-        .menu {
-          font-size: 1.8rem;
-          padding: 0 15px 0 0;
-          color: #fff;
-          cursor: pointer;
-        }
       }
+      .menu {
+        width: 1rem;
+        font-size: 1.8rem;
+        padding: 0 15px 0 0;
+        color: #fff;
+        cursor: pointer;
+        padding: 0 15px;
+      }
+      .bgMenuChanger {
+        background-color: rgb(60, 60, 60);
+      }
+    }
+  }
+}
+
+// MENU LIST
+
+.menuList {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(60, 60, 60);
+  z-index: 99;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 60px 30px;
+  h4 {
+    color: #fff;
+    font-family: 'supermolot', sans-serif;
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    span {
+      font-size: 1rem;
+    }
+  }
+  ul li {
+    list-style: none;
+    margin-bottom: -8px;
+    span {
+      color: red;
+      font-size: 10px;
+    }
+    a {
+      color: #959595;
+      font-size: 15px;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.displayMenuList {
+  display: none;
+}
+
+// HEADER
+
+.contHeader {
+  background-color: #000;
+  header {
+    position: relative;
+    max-width: 1480px;
+    margin: auto;
+    display: flex;
+    img {
+      width: 100%;
+      display: block;
+    }
+    .banner1 {
+      width: 75%;
+    }
+    .banner2 {
+      width: 25%;
+      display: flex;
+      flex-direction: column;
+      .playIcon {
+        position: absolute;
+        top: -5px;
+        left: 20px;
+        font-size: 2.5rem;
+        color: #fff;
+        cursor: default;
+      }
+    }
+    .banner1,
+    .newsHead {
+      position: relative;
+    }
+    .bannerTitle,
+    .title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0 0 0 / 0.3);
+      color: #fff;
+      font-family: 'supermolot', sans-serif;
+      font-weight: bold;
+    }
+    .bannerTitle {
+      padding: 20px;
+      font-size: 2rem;
+    }
+    .title {
+      padding: 10px;
     }
   }
 }
