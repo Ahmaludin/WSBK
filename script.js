@@ -8,10 +8,7 @@ menuBtn.addEventListener('click', function () {
 });
 
 // ARTICLE
-const article = Array.from(document.querySelectorAll('article'));
+// const article = Array.from(document.querySelectorAll('article'));
+// article.forEach((a, i) => a.classList.add(i));
 
-article.forEach((a, i) => a.classList.add(i));
-
-article.forEach((a, i) => (a.style.gridArea = `${i}`));
-
-console.log(article);
+console.log(tes);

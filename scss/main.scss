@@ -337,6 +337,104 @@ body {
       '13 14 15 16';
     column-gap: 2rem;
     row-gap: 1rem;
+    .info {
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      background-color: #fff;
+    }
+    .standings {
+      .standingsTitle {
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        font-size: 1rem;
+        font-family: 'supermolot', sans-serif;
+        padding: 10px 0;
+      }
+    }
+    .spiredRider {
+      .title {
+        background-color: skyblue;
+        text-align: center;
+        padding: 15px 0 5px;
+        img {
+          width: 300px;
+        }
+      }
+    }
+    .superpole {
+      .title {
+        text-align: center;
+        padding: 10px 0;
+        img {
+          width: 200px;
+        }
+      }
+    }
+    .bestLap {
+      .title {
+        background-color: #333;
+        text-align: center;
+        padding: 15px 0;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        img {
+          // width: 200px;
+        }
+        h4 {
+          color: #fff;
+          font-family: 'supermolot', sans-serif;
+          font-size: 20px;
+        }
+      }
+    }
+    .sbk2022 {
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      span {
+        color: #fff;
+        font-size: 21px;
+        font-weight: bold;
+      }
+      img {
+        width: 180px;
+      }
+    }
+    .menu {
+      background-color: #f5f5f5;
+      ul {
+        display: flex;
+        justify-content: space-evenly;
+        li {
+          list-style: none;
+          font-size: 13px;
+          text-align: center;
+          padding: 8px 0;
+          width: 100%;
+          cursor: pointer;
+        }
+        .infoMenuSelected {
+          background-color: rgb(196, 127, 0);
+          color: #fff;
+          font-weight: bold;
+          cursor: default;
+        }
+        // .sbk {
+        //   background-color: #333;
+        //   width: 100%;
+        // }
+        // .ssp {
+        //   background-color: #aaa;
+        //   width: 100%;
+        // }
+        // .ssp300 {
+        //   background-color: #bbb;
+        //   width: 100%;
+        // }
+      }
+    }
     article {
       background-color: #fff;
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
