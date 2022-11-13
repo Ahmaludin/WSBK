@@ -25,11 +25,10 @@ $color4:
 body {
   font-size: 18px;
   font-family: "cairo", sans-serif;
+  background-color: #f5f5f5;
+  height: 5000px;
 }
 
-.contNav1 {
-  background-color: #f5f5f5;
-}
 .contNav1 .nav1 {
   max-width: 1480px;
   margin: auto;
@@ -273,4 +272,89 @@ body {
 }
 .contHeader header .title {
   padding: 10px;
+}
+
+.contUpdates {
+  max-width: 1480px;
+  margin: auto;
+}
+.contUpdates .updates {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #939393;
+  margin: 20px;
+  padding: 20px 10px 30px 20px;
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.contUpdates .updates h2 {
+  font-family: "supermolot", sans-serif;
+  font-size: 23px;
+  font-weight: bold;
+}
+.contUpdates .updates .category {
+  font-size: 14px;
+  border: none;
+  color: #939393;
+}
+
+.contArticle {
+  max-width: 1480px;
+  margin: auto;
+}
+.contArticle .articles {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "0 1 round 2" "3 4 5 n1" "standings 6 7 8" "spiredRider superpole 9 10" "bestLap 11 n2 12" "13 14 15 16";
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  row-gap: 1rem;
+}
+.contArticle .articles article {
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.contArticle .articles article .tag {
+  color: red;
+  padding-left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: -5px;
+  margin-bottom: -5px;
+}
+.contArticle .articles article .title {
+  color: #3b3b3b;
+  padding: 0 10px 10px;
+  font-size: 1rem;
+}
+.contArticle .articles article img {
+  width: 100%;
+}
+.contArticle .articles article a {
+  text-decoration: none;
+}
+.contArticle .articles article:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.contArticle .articles .round {
+  grid-area: round;
+}
+.contArticle .articles .standings {
+  grid-area: standings;
+}
+.contArticle .articles .spiredRider {
+  grid-area: spiredRider;
+}
+.contArticle .articles .superpole {
+  grid-area: superpole;
+}
+.contArticle .articles .bestLap {
+  grid-area: bestLap;
+}
+.contArticle .articles .noneDisplay1 {
+  grid-area: n1;
+}
+.contArticle .articles .noneDisplay2 {
+  grid-area: n2;
 }/*# sourceMappingURL=main.css.map */
