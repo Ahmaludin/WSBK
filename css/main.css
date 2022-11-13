@@ -151,6 +151,22 @@ body {
   color: #fff;
   font-size: 15px;
   padding: 0 15px;
+  position: relative;
+}
+.contNav3 .nav3 ul li a:after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -12px;
+  content: ".";
+  width: 0%;
+  background: red;
+  color: transparent;
+  margin: auto;
+  height: 4px;
+}
+.contNav3 .nav3 ul li a:hover:after {
+  width: 100%;
 }
 .contNav3 .nav3 ul .menu {
   width: 1rem;
@@ -159,6 +175,7 @@ body {
   color: #fff;
   cursor: pointer;
   padding: 0 15px;
+  margin-right: 10px;
 }
 .contNav3 .nav3 ul .bgMenuChanger {
   background-color: rgb(60, 60, 60);
