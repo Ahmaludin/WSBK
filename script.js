@@ -7,8 +7,75 @@ menuBtn.addEventListener('click', function () {
   menuList.classList.toggle('displayMenuList');
 });
 
-// ARTICLE
-// const article = Array.from(document.querySelectorAll('article'));
-// article.forEach((a, i) => a.classList.add(i));
+// ARTICLE INFO
 
-console.log(tes);
+const articles = document.querySelector('.articles');
+const standings = document.querySelector('.standings');
+const superpole = document.querySelector('.superpole');
+const bestLap = document.querySelector('.bestLap');
+
+articles.addEventListener('click', function (e) {
+  function previousMenu() {
+    if (e.target.previousElementSibling.className.includes('infoMenuSelected')) {
+      e.target.previousElementSibling.classList.toggle('infoMenuSelected');
+    }
+  }
+  function previousPreviousMenu() {
+    if (e.target.previousElementSibling.previousElementSibling.className.includes('infoMenuSelected')) {
+      e.target.previousElementSibling.previousElementSibling.classList.toggle('infoMenuSelected');
+    }
+  }
+  function nextMenu() {
+    if (e.target.nextElementSibling.className.includes('infoMenuSelected')) {
+      e.target.nextElementSibling.classList.toggle('infoMenuSelected');
+    }
+  }
+  function nextNextMenu() {
+    if (e.target.nextElementSibling.nextElementSibling.className.includes('infoMenuSelected')) {
+      e.target.nextElementSibling.nextElementSibling.classList.toggle('infoMenuSelected');
+    }
+  }
+
+  const eInfoMenu = e.target.className;
+
+  if (eInfoMenu == 'ssp') {
+    e.target.classList.toggle('infoMenuSelected');
+    previousMenu();
+    nextMenu();
+  } else if (eInfoMenu == 'ssp300') {
+    e.target.classList.toggle('infoMenuSelected');
+    previousMenu();
+    previousPreviousMenu();
+  } else if (eInfoMenu == 'sbk') {
+    e.target.classList.toggle('infoMenuSelected');
+    nextMenu();
+    nextNextMenu();
+  }
+
+  const eInfo = e.target.parentElement.parentElement.parentElement.className;
+
+  // Standings
+  if (eInfoMenu == 'sbk' && eInfo.includes('standings')) {
+    console.log('sbk in standings');
+  } else if (eInfoMenu == 'ssp' && eInfo.includes('standings')) {
+    console.log('spp in standings');
+  } else if (eInfoMenu == 'ssp300' && eInfo.includes('standings')) {
+    console.log('spp300 in standings');
+  }
+  // Superpole
+  else if (eInfoMenu == 'sbk' && eInfo.includes('superpole')) {
+    console.log('sbk in superpole');
+  } else if (eInfoMenu == 'ssp' && eInfo.includes('superpole')) {
+    console.log('spp in superpole');
+  } else if (eInfoMenu == 'ssp300' && eInfo.includes('superpole')) {
+    console.log('spp300 in superpole');
+  }
+  // BestLap
+  else if (eInfoMenu == 'sbk' && eInfo.includes('bestLap')) {
+    console.log('sbk in bestLap');
+  } else if (eInfoMenu == 'ssp' && eInfo.includes('bestLap')) {
+    console.log('spp in bestLap');
+  } else if (eInfoMenu == 'ssp300' && eInfo.includes('bestLap')) {
+    console.log('spp300 in bestLap');
+  }
+});
