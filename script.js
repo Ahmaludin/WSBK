@@ -19,6 +19,9 @@ articles.addEventListener('click', function (e) {
     if (e.target.previousElementSibling.className.includes('infoMenuSelected')) {
       e.target.previousElementSibling.classList.toggle('infoMenuSelected');
     }
+    if (e.target.previousElementSibling.className.includes('menuBgGreen')) {
+      e.target.previousElementSibling.classList.toggle('menuBgGreen');
+    }
   }
   function previousPreviousMenu() {
     if (e.target.previousElementSibling.previousElementSibling.className.includes('infoMenuSelected')) {
@@ -29,10 +32,19 @@ articles.addEventListener('click', function (e) {
     if (e.target.nextElementSibling.className.includes('infoMenuSelected')) {
       e.target.nextElementSibling.classList.toggle('infoMenuSelected');
     }
+    if (e.target.nextElementSibling.className.includes('menuBgGreen')) {
+      e.target.nextElementSibling.classList.toggle('menuBgGreen');
+    }
+    if (e.target.nextElementSibling.className.includes('menuBgPurple')) {
+      e.target.nextElementSibling.classList.toggle('menuBgPurple');
+    }
   }
   function nextNextMenu() {
     if (e.target.nextElementSibling.nextElementSibling.className.includes('infoMenuSelected')) {
       e.target.nextElementSibling.nextElementSibling.classList.toggle('infoMenuSelected');
+    }
+    if (e.target.nextElementSibling.nextElementSibling.className.includes('menuBgPurple')) {
+      e.target.nextElementSibling.nextElementSibling.classList.toggle('menuBgPurple');
     }
   }
 
@@ -40,10 +52,12 @@ articles.addEventListener('click', function (e) {
 
   if (eInfoMenu == 'ssp') {
     e.target.classList.toggle('infoMenuSelected');
+    e.target.classList.toggle('menuBgGreen');
     previousMenu();
     nextMenu();
   } else if (eInfoMenu == 'ssp300') {
     e.target.classList.toggle('infoMenuSelected');
+    e.target.classList.toggle('menuBgPurple');
     previousMenu();
     previousPreviousMenu();
   } else if (eInfoMenu == 'sbk') {

@@ -386,6 +386,12 @@ body {
   font-weight: bold;
   cursor: default;
 }
+.contArticle .articles .menu ul .menuBgGreen {
+  background-color: green;
+}
+.contArticle .articles .menu ul .menuBgPurple {
+  background-color: purple;
+}
 .contArticle .articles article {
   background-color: #fff;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
