@@ -378,9 +378,6 @@ body {
         display: flex;
         justify-content: center;
         gap: 10px;
-        img {
-          // width: 200px;
-        }
         h4 {
           color: #fff;
           font-family: 'supermolot', sans-serif;
@@ -421,18 +418,12 @@ body {
           font-weight: bold;
           cursor: default;
         }
-        // .sbk {
-        //   background-color: #333;
-        //   width: 100%;
-        // }
-        // .ssp {
-        //   background-color: #aaa;
-        //   width: 100%;
-        // }
-        // .ssp300 {
-        //   background-color: #bbb;
-        //   width: 100%;
-        // }
+        .menuBgGreen {
+          background-color: green;
+        }
+        .menuBgPurple {
+          background-color: purple;
+        }
       }
     }
     article {
