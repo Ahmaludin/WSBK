@@ -12,14 +12,16 @@ menuBtn.addEventListener("click", function () {
   menuList.classList.toggle("displayMenuList");
 });
 
-// ARTICLE INFO
+// -------------------- ARTICLES
 
 const articles = document.querySelector(".articles");
-const standings = document.querySelector(".standings");
-const superpole = document.querySelector(".superpole");
-const bestLap = document.querySelector(".bestLap");
 
+// Articles click event
 articles.addEventListener("click", function (e) {
+  // articleTCN is Article Target Class Name
+  const articleTCN = e.target.className;
+
+  // Sistem perubahan warna menu pada info
   function previousMenu() {
     if (
       e.target.previousElementSibling.className.includes("infoMenuSelected")
@@ -73,48 +75,75 @@ articles.addEventListener("click", function (e) {
     }
   }
 
-  const eInfoMenu = e.target.className;
-
-  if (eInfoMenu == "ssp") {
+  if (articleTCN == "ssp") {
     e.target.classList.toggle("infoMenuSelected");
     e.target.classList.toggle("menuBgGreen");
     previousMenu();
     nextMenu();
-  } else if (eInfoMenu == "ssp300") {
+  } else if (articleTCN == "ssp300") {
     e.target.classList.toggle("infoMenuSelected");
     e.target.classList.toggle("menuBgPurple");
     previousMenu();
     previousPreviousMenu();
-  } else if (eInfoMenu == "sbk") {
+  } else if (articleTCN == "sbk") {
     e.target.classList.toggle("infoMenuSelected");
     nextMenu();
     nextNextMenu();
   }
+  // End of - sistem perubahan warna menu pada info
+});
+// End of - Articles click event
 
-  const eInfo = e.target.parentElement.parentElement.parentElement.className;
+// ---------- Info content
+const standings = document.querySelector(".standings");
+const superpole = document.querySelector(".superpole");
+const bestLap = document.querySelector(".bestLap");
 
-  // Standings
-  if (eInfoMenu == "sbk" && eInfo.includes("standings")) {
-    console.log("sbk in standings");
-  } else if (eInfoMenu == "ssp" && eInfo.includes("standings")) {
-    console.log("spp in standings");
-  } else if (eInfoMenu == "ssp300" && eInfo.includes("standings")) {
-    console.log("spp300 in standings");
-  }
-  // Superpole
-  else if (eInfoMenu == "sbk" && eInfo.includes("superpole")) {
-    console.log("sbk in superpole");
-  } else if (eInfoMenu == "ssp" && eInfo.includes("superpole")) {
-    console.log("spp in superpole");
-  } else if (eInfoMenu == "ssp300" && eInfo.includes("superpole")) {
-    console.log("spp300 in superpole");
-  }
-  // BestLap
-  else if (eInfoMenu == "sbk" && eInfo.includes("bestLap")) {
-    console.log("sbk in bestLap");
-  } else if (eInfoMenu == "ssp" && eInfo.includes("bestLap")) {
-    console.log("spp in bestLap");
-  } else if (eInfoMenu == "ssp300" && eInfo.includes("bestLap")) {
-    console.log("spp300 in bestLap");
+// test area
+const riderPoleLi = Array.from(
+  document.querySelectorAll(".standings .riderPole ol li")
+);
+
+let hallo = "";
+for (let i = 0; i < riderPoleLi; i++) {
+  hallo += riderPoleLi[i].innerText(" REA\nKAWASAKI\n723");
+}
+
+// riderPoleLi.forEach(function (e, i) {
+//   e.innerHTML("hallo");
+// });
+
+console.log(riderPoleLi);
+console.log(hallo);
+//
+
+// Info click event
+// standings
+standings.addEventListener("click", function (e) {
+  // iTCN is Info Target Class Name
+  const iTCN = e.target.className;
+
+  const riderPoleLi = document.querySelectorAll(".standings .riderPole ol li");
+  const riderName = document.querySelector(".standings .riderPole .riderName");
+  const riderTeam = document.querySelector(".standings .riderPole .riderTeam");
+  const riderPoint = document.querySelector(
+    ".standings .riderPole .riderPoint"
+  );
+  const riderCountry = document.querySelector(".standings .riderPole");
+
+  if (iTCN == "sbk") {
+  } else if (iTCN == "ssp") {
+  } else if (iTCN == "ssp300") {
   }
 });
+// superpole
+// bestlap
+// End of - Info click event
+
+// Sistem perubahan rider pole pada info
+// End of - Sistem perubahan rider pole pada info
+
+standings.addEventListener("click", function (e) {});
+// ---------- End of - Info content
+
+// -------------------- End of - ARTICLES
