@@ -311,6 +311,11 @@ body {
        column-gap: 2rem;
   row-gap: 1rem;
 }
+.contArticle .articles article,
+.contArticle .articles .info {
+  min-width: 300px;
+  min-height: 300px;
+}
 .contArticle .articles .info {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   background-color: #fff;
@@ -322,6 +327,17 @@ body {
   font-size: 1rem;
   font-family: "supermolot", sans-serif;
   padding: 10px 0;
+}
+.contArticle .articles .standings .linkFull {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  background-color: #f5f5f5;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 5px 0;
 }
 .contArticle .articles .spiredRider .title {
   background-color: skyblue;
@@ -350,6 +366,26 @@ body {
   color: #fff;
   font-family: "supermolot", sans-serif;
   font-size: 20px;
+}
+.contArticle .articles .riderPole {
+  margin: 10px 10px 10px 2rem;
+}
+.contArticle .articles .riderPole ol li {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.contArticle .articles .riderPole ol li ul li {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 10fr 2fr 1fr;
+  justify-content: stretch;
+  gap: 10px;
+}
+.contArticle .articles .riderPole ol li ul li .riderName {
+  font-weight: bold;
+}
+.contArticle .articles .riderPole ol li ul li .riderTeam {
+  justify-self: end;
 }
 .contArticle .articles .sbk2022 {
   background-color: #000;
@@ -402,12 +438,12 @@ body {
   font-size: 14px;
   font-weight: bold;
   margin-top: -5px;
-  margin-bottom: -5px;
 }
 .contArticle .articles article .title {
   color: #3b3b3b;
-  padding: 0 10px 10px;
-  font-size: 1rem;
+  padding: 0 10px 15px 10px;
+  font-size: 18px;
+  line-height: 26px;
 }
 .contArticle .articles article img {
   width: 100%;

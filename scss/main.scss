@@ -5,8 +5,8 @@
 // font-family: 'Poppins', sans-serif;
 // font-family: 'Roboto', sans-serif;
 
-@use 'modules/mixin';
-@use 'modules/variable';
+@use "modules/mixin";
+@use "modules/variable";
 
 * {
   margin: 0;
@@ -14,20 +14,20 @@
 }
 
 @font-face {
-  font-family: 'cairo';
+  font-family: "cairo";
   font-style: normal;
   font-weight: normal;
-  src: url('../fonts/Cairo-Regular.woff') format('woff');
+  src: url("../fonts/Cairo-Regular.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'supermolot';
-  src: url('../fonts/TTSupermolotNeue-Regular.otf');
+  font-family: "supermolot";
+  src: url("../fonts/TTSupermolotNeue-Regular.otf");
 }
 
 body {
   font-size: 18px;
-  font-family: 'cairo', sans-serif;
+  font-family: "cairo", sans-serif;
   background-color: #f5f5f5;
   height: 5000px;
 }
@@ -169,7 +169,7 @@ body {
           left: 0;
           right: 0;
           bottom: -12px;
-          content: '.';
+          content: ".";
           width: 0%;
           background: red;
           color: transparent;
@@ -210,7 +210,7 @@ body {
   padding: 0 60px 30px;
   h4 {
     color: #fff;
-    font-family: 'supermolot', sans-serif;
+    font-family: "supermolot", sans-serif;
     font-size: 22px;
     margin-top: 20px;
     margin-bottom: 5px;
@@ -281,7 +281,7 @@ body {
       right: 0;
       background-color: rgba(0 0 0 / 0.3);
       color: #fff;
-      font-family: 'supermolot', sans-serif;
+      font-family: "supermolot", sans-serif;
       font-weight: bold;
     }
     .bannerTitle {
@@ -308,7 +308,7 @@ body {
     background-color: #fff;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     h2 {
-      font-family: 'supermolot', sans-serif;
+      font-family: "supermolot", sans-serif;
       font-size: 23px;
       font-weight: bold;
     }
@@ -329,28 +329,47 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas:
-      '0 1 round 2'
-      '3 4 5 n1'
-      'standings 6 7 8'
-      'spiredRider superpole 9 10'
-      'bestLap 11 n2 12'
-      '13 14 15 16';
+      "0 1 round 2"
+      "3 4 5 n1"
+      "standings 6 7 8"
+      "spiredRider superpole 9 10"
+      "bestLap 11 n2 12"
+      "13 14 15 16";
     column-gap: 2rem;
     row-gap: 1rem;
+    article,
+    .info {
+      min-width: 300px;
+      min-height: 300px;
+    }
     .info {
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       background-color: #fff;
     }
+    // Standings
     .standings {
       .standingsTitle {
         background-color: #000;
         color: #fff;
         text-align: center;
         font-size: 1rem;
-        font-family: 'supermolot', sans-serif;
+        font-family: "supermolot", sans-serif;
         padding: 10px 0;
       }
+      .linkFull {
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+        background-color: #f5f5f5;
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+        font-size: 14px;
+        padding: 5px 0;
+      }
     }
+
+    // Spired rider
     .spiredRider {
       .title {
         background-color: skyblue;
@@ -361,6 +380,8 @@ body {
         }
       }
     }
+
+    // Superpole
     .superpole {
       .title {
         text-align: center;
@@ -370,6 +391,8 @@ body {
         }
       }
     }
+
+    // Best lap
     .bestLap {
       .title {
         background-color: #333;
@@ -380,11 +403,36 @@ body {
         gap: 10px;
         h4 {
           color: #fff;
-          font-family: 'supermolot', sans-serif;
+          font-family: "supermolot", sans-serif;
           font-size: 20px;
         }
       }
     }
+    // Rider pole of standings, spired rider, superpole, and bestlap
+    .riderPole {
+      margin: 10px 10px 10px 2rem;
+      ol {
+        li {
+          font-size: 14px;
+          margin-bottom: 5px;
+          ul li {
+            .riderName {
+              font-weight: bold;
+            }
+            .riderTeam {
+              justify-self: end;
+            }
+            // .riderPoint {}
+            list-style: none;
+            display: grid;
+            grid-template-columns: 10fr 2fr 1fr;
+            justify-content: stretch;
+            gap: 10px;
+          }
+        }
+      }
+    }
+
     .sbk2022 {
       background-color: #000;
       display: flex;
@@ -435,12 +483,12 @@ body {
         font-size: 14px;
         font-weight: bold;
         margin-top: -5px;
-        margin-bottom: -5px;
       }
       .title {
         color: #3b3b3b;
-        padding: 0 10px 10px;
-        font-size: 1rem;
+        padding: 0 10px 15px 10px;
+        font-size: 18px;
+        line-height: 26px;
       }
       img {
         width: 100%;
