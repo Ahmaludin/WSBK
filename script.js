@@ -100,30 +100,35 @@ const superpole = document.querySelector(".superpole");
 const bestLap = document.querySelector(".bestLap");
 
 // test area
-const riderPoleLi = Array.from(
-  document.querySelectorAll(".standings .riderPole ol li")
-);
+const riderPole = document.querySelector(".standings .riderPole");
+const riderPoleList = document.querySelectorAll(".standings .riderPoleList");
 
-let hallo = "";
-for (let i = 0; i < riderPoleLi; i++) {
-  hallo += riderPoleLi[i].innerText(" REA\nKAWASAKI\n723");
-}
+// function addRiderPole(flag, riderName, riderTeam, riderPoint) {
+//   const add = `<span class="riderName"><span class="fi fi-${flag}"></span> ${riderName}</span><span class="riderTeam">${riderTeam}</span><span class="riderPoint">${riderPoint}</span>`;
+// }
 
-// riderPoleLi.forEach(function (e, i) {
-//   e.innerHTML("hallo");
+// const add = function (flag, riderName, riderTeam, riderPoint) {
+//   `<span class="riderName"><span class="fi fi-${flag}"></span> ${riderName}</span><span class="riderTeam">${riderTeam}</span><span class="riderPoint">${riderPoint}</span>`;
+// };
+// const ahmal = add(id, ahmal, kawasaki, 100);
+// riderPoleList[0].innerHTML = ahmal;
+// riderPoleList[0].replaceWith(addRiderPole(id, AHMALUDIN, KAWASAKI, 100));
+
+// riderPoleList.forEach(function (r) {
+//   r.remove();
 // });
 
-console.log(riderPoleLi);
-console.log(hallo);
+console.log(add);
 //
 
 // Info click event
 // standings
-standings.addEventListener("click", function (e) {
+standings.addEventListener("click", function () {
+  alert("ok");
   // iTCN is Info Target Class Name
   const iTCN = e.target.className;
 
-  const riderPoleLi = document.querySelectorAll(".standings .riderPole ol li");
+  const riderPoleList = document.querySelectorAll(".standings .riderPoleList");
   const riderName = document.querySelector(".standings .riderPole .riderName");
   const riderTeam = document.querySelector(".standings .riderPole .riderTeam");
   const riderPoint = document.querySelector(
@@ -132,8 +137,11 @@ standings.addEventListener("click", function (e) {
   const riderCountry = document.querySelector(".standings .riderPole");
 
   if (iTCN == "sbk") {
+    console.log("sbk");
   } else if (iTCN == "ssp") {
+    console.log("ssp");
   } else if (iTCN == "ssp300") {
+    console.log("ssp300");
   }
 });
 // superpole
