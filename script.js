@@ -12,14 +12,18 @@ menuBtn.addEventListener("click", function () {
   menuList.classList.toggle("displayMenuList");
 });
 
-// ARTICLE INFO
+// -------------------- ARTICLES
 
 const articles = document.querySelector(".articles");
-const standings = document.querySelector(".standings");
-const superpole = document.querySelector(".superpole");
-const bestLap = document.querySelector(".bestLap");
 
+// Articles click event
 articles.addEventListener("click", function (e) {
+  // articleTCN is Article Target Class Name
+  const articleTCN = e.target.className;
+
+  // ---------- Info content
+
+  // Sistem perubahan warna menu pada info
   function previousMenu() {
     if (
       e.target.previousElementSibling.className.includes("infoMenuSelected")
@@ -73,48 +77,136 @@ articles.addEventListener("click", function (e) {
     }
   }
 
-  const eInfoMenu = e.target.className;
-
-  if (eInfoMenu == "ssp") {
+  if (articleTCN == "ssp") {
     e.target.classList.toggle("infoMenuSelected");
     e.target.classList.toggle("menuBgGreen");
     previousMenu();
     nextMenu();
-  } else if (eInfoMenu == "ssp300") {
+  } else if (articleTCN == "ssp300") {
     e.target.classList.toggle("infoMenuSelected");
     e.target.classList.toggle("menuBgPurple");
     previousMenu();
     previousPreviousMenu();
-  } else if (eInfoMenu == "sbk") {
+  } else if (articleTCN == "sbk") {
     e.target.classList.toggle("infoMenuSelected");
     nextMenu();
     nextNextMenu();
   }
+  // End of - sistem perubahan warna menu pada info
 
-  const eInfo = e.target.parentElement.parentElement.parentElement.className;
+  // sistem perubahan rider pole
+  function addRider(flag, riderName, riderTeam, riderPoint) {
+    return `<span class="riderName"><span class="fi fi-${flag}"></span> ${riderName}</span>
+    <span class="riderTeam">${riderTeam}</span>
+    <span class="riderPoint">${riderPoint}</span>`;
+  }
 
-  // Standings
-  if (eInfoMenu == "sbk" && eInfo.includes("standings")) {
-    console.log("sbk in standings");
-  } else if (eInfoMenu == "ssp" && eInfo.includes("standings")) {
-    console.log("spp in standings");
-  } else if (eInfoMenu == "ssp300" && eInfo.includes("standings")) {
-    console.log("spp300 in standings");
+  // standings
+  const standingsRPL = Array.from(
+    document.querySelectorAll(".standings .riderPoleList")
+  );
+  const standingsCN =
+    e.target.parentElement.parentElement.parentElement.className;
+
+  // standings ssp
+  if (articleTCN == "ssp" && standingsCN == "standings info") {
+    standingsRPL[0].innerHTML = addRider(
+      "ch",
+      "DOMINIQUE AEGERTER",
+      "yamaha",
+      "462"
+    );
+    standingsRPL[1].innerHTML = addRider(
+      "it",
+      "LORENZO BALDASSARRI",
+      "yamaha",
+      "359"
+    );
+    standingsRPL[2].innerHTML = addRider("tr", "CAN ONCU", "kawasaki", "248");
+    standingsRPL[3].innerHTML = addRider(
+      "it",
+      "NICOLO BULEGA",
+      "ducati",
+      "210"
+    );
+    standingsRPL[4].innerHTML = addRider(
+      "it",
+      "STEFANO MANZI",
+      "triumph",
+      "207"
+    );
+    standingsRPL[5].innerHTML = addRider(
+      "it",
+      "FEDERICO CARICASULO",
+      "ducati",
+      "191"
+    );
   }
-  // Superpole
-  else if (eInfoMenu == "sbk" && eInfo.includes("superpole")) {
-    console.log("sbk in superpole");
-  } else if (eInfoMenu == "ssp" && eInfo.includes("superpole")) {
-    console.log("spp in superpole");
-  } else if (eInfoMenu == "ssp300" && eInfo.includes("superpole")) {
-    console.log("spp300 in superpole");
+  // standings ssp300
+  else if (articleTCN == "ssp300" && standingsCN == "standings info") {
+    standingsRPL[0].innerHTML = addRider("es", "ALVARO DIAZ", "yamaha", "259");
+    standingsRPL[1].innerHTML = addRider(
+      "nl",
+      "VICTOR STEEMAN",
+      "kawasaki",
+      "180"
+    );
+    standingsRPL[2].innerHTML = addRider(
+      "fr",
+      "HUGO DE CANCELLIS",
+      "kawasaki",
+      "171"
+    );
+    standingsRPL[3].innerHTML = addRider("es", "MARC GARCIA", "yamaha", "164");
+    standingsRPL[4].innerHTML = addRider(
+      "fr",
+      "SAMUEL DI SORA",
+      "kawasaki",
+      "146"
+    );
+    standingsRPL[5].innerHTML = addRider("it", "MIRKO GENNAI", "yamaha", "140");
   }
-  // BestLap
-  else if (eInfoMenu == "sbk" && eInfo.includes("bestLap")) {
-    console.log("sbk in bestLap");
-  } else if (eInfoMenu == "ssp" && eInfo.includes("bestLap")) {
-    console.log("spp in bestLap");
-  } else if (eInfoMenu == "ssp300" && eInfo.includes("bestLap")) {
-    console.log("spp300 in bestLap");
+  // standings sbk
+  else if (articleTCN == "sbk" && standingsCN == "standings info") {
+    standingsRPL[0].innerHTML = addRider(
+      "es",
+      "ALVARO BAUTISTA",
+      "DUCATI",
+      "553"
+    );
+    standingsRPL[1].innerHTML = addRider(
+      "tr",
+      "TOPRAK RAZGATLIOGLU",
+      "yamaha",
+      "487"
+    );
+    standingsRPL[2].innerHTML = addRider(
+      "gb",
+      "JONATHAN REA",
+      "kawasaki",
+      "450"
+    );
+    standingsRPL[3].innerHTML = addRider(
+      "it",
+      "MICHAEL RUBEN RINALDI",
+      "ducati",
+      "279"
+    );
+    standingsRPL[4].innerHTML = addRider(
+      "it",
+      "ANDREA LOCATELLI",
+      "yamaha",
+      "245"
+    );
+    standingsRPL[5].innerHTML = addRider("gb", "ALEX LOWES", "kawasaki", "234");
   }
+
+  // superpole
+  // bestlap
+  // End of - sistem perubahan rider pole
+
+  // ---------- End of - Info content
 });
+// End of - Articles click event
+
+// -------------------- End of - ARTICLES

@@ -375,6 +375,7 @@ body {
   margin-bottom: 5px;
 }
 .contArticle .articles .riderPole ol li ul li {
+  text-transform: uppercase;
   list-style: none;
   display: grid;
   grid-template-columns: 10fr 2fr 1fr;
