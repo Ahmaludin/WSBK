@@ -21,6 +21,8 @@ articles.addEventListener("click", function (e) {
   // articleTCN is Article Target Class Name
   const articleTCN = e.target.className;
 
+  // ---------- Info content
+
   // Sistem perubahan warna menu pada info
   function previousMenu() {
     if (
@@ -91,67 +93,120 @@ articles.addEventListener("click", function (e) {
     nextNextMenu();
   }
   // End of - sistem perubahan warna menu pada info
+
+  // sistem perubahan rider pole
+  function addRider(flag, riderName, riderTeam, riderPoint) {
+    return `<span class="riderName"><span class="fi fi-${flag}"></span> ${riderName}</span>
+    <span class="riderTeam">${riderTeam}</span>
+    <span class="riderPoint">${riderPoint}</span>`;
+  }
+
+  // standings
+  const standingsRPL = Array.from(
+    document.querySelectorAll(".standings .riderPoleList")
+  );
+  const standingsCN =
+    e.target.parentElement.parentElement.parentElement.className;
+
+  // standings ssp
+  if (articleTCN == "ssp" && standingsCN == "standings info") {
+    standingsRPL[0].innerHTML = addRider(
+      "ch",
+      "DOMINIQUE AEGERTER",
+      "yamaha",
+      "462"
+    );
+    standingsRPL[1].innerHTML = addRider(
+      "it",
+      "LORENZO BALDASSARRI",
+      "yamaha",
+      "359"
+    );
+    standingsRPL[2].innerHTML = addRider("tr", "CAN ONCU", "kawasaki", "248");
+    standingsRPL[3].innerHTML = addRider(
+      "it",
+      "NICOLO BULEGA",
+      "ducati",
+      "210"
+    );
+    standingsRPL[4].innerHTML = addRider(
+      "it",
+      "STEFANO MANZI",
+      "triumph",
+      "207"
+    );
+    standingsRPL[5].innerHTML = addRider(
+      "it",
+      "FEDERICO CARICASULO",
+      "ducati",
+      "191"
+    );
+  }
+  // standings ssp300
+  else if (articleTCN == "ssp300" && standingsCN == "standings info") {
+    standingsRPL[0].innerHTML = addRider("es", "ALVARO DIAZ", "yamaha", "259");
+    standingsRPL[1].innerHTML = addRider(
+      "nl",
+      "VICTOR STEEMAN",
+      "kawasaki",
+      "180"
+    );
+    standingsRPL[2].innerHTML = addRider(
+      "fr",
+      "HUGO DE CANCELLIS",
+      "kawasaki",
+      "171"
+    );
+    standingsRPL[3].innerHTML = addRider("es", "MARC GARCIA", "yamaha", "164");
+    standingsRPL[4].innerHTML = addRider(
+      "fr",
+      "SAMUEL DI SORA",
+      "kawasaki",
+      "146"
+    );
+    standingsRPL[5].innerHTML = addRider("it", "MIRKO GENNAI", "yamaha", "140");
+  }
+  // standings sbk
+  else if (articleTCN == "sbk" && standingsCN == "standings info") {
+    standingsRPL[0].innerHTML = addRider(
+      "es",
+      "ALVARO BAUTISTA",
+      "DUCATI",
+      "553"
+    );
+    standingsRPL[1].innerHTML = addRider(
+      "tr",
+      "TOPRAK RAZGATLIOGLU",
+      "yamaha",
+      "487"
+    );
+    standingsRPL[2].innerHTML = addRider(
+      "gb",
+      "JONATHAN REA",
+      "kawasaki",
+      "450"
+    );
+    standingsRPL[3].innerHTML = addRider(
+      "it",
+      "MICHAEL RUBEN RINALDI",
+      "ducati",
+      "279"
+    );
+    standingsRPL[4].innerHTML = addRider(
+      "it",
+      "ANDREA LOCATELLI",
+      "yamaha",
+      "245"
+    );
+    standingsRPL[5].innerHTML = addRider("gb", "ALEX LOWES", "kawasaki", "234");
+  }
+
+  // superpole
+  // bestlap
+  // End of - sistem perubahan rider pole
+
+  // ---------- End of - Info content
 });
 // End of - Articles click event
-
-// ---------- Info content
-const standings = document.querySelector(".standings");
-const superpole = document.querySelector(".superpole");
-const bestLap = document.querySelector(".bestLap");
-
-// test area
-const riderPole = document.querySelector(".standings .riderPole");
-const riderPoleList = document.querySelectorAll(".standings .riderPoleList");
-
-// function addRiderPole(flag, riderName, riderTeam, riderPoint) {
-//   const add = `<span class="riderName"><span class="fi fi-${flag}"></span> ${riderName}</span><span class="riderTeam">${riderTeam}</span><span class="riderPoint">${riderPoint}</span>`;
-// }
-
-// const add = function (flag, riderName, riderTeam, riderPoint) {
-//   `<span class="riderName"><span class="fi fi-${flag}"></span> ${riderName}</span><span class="riderTeam">${riderTeam}</span><span class="riderPoint">${riderPoint}</span>`;
-// };
-// const ahmal = add(id, ahmal, kawasaki, 100);
-// riderPoleList[0].innerHTML = ahmal;
-// riderPoleList[0].replaceWith(addRiderPole(id, AHMALUDIN, KAWASAKI, 100));
-
-// riderPoleList.forEach(function (r) {
-//   r.remove();
-// });
-
-console.log(add);
-//
-
-// Info click event
-// standings
-standings.addEventListener("click", function () {
-  alert("ok");
-  // iTCN is Info Target Class Name
-  const iTCN = e.target.className;
-
-  const riderPoleList = document.querySelectorAll(".standings .riderPoleList");
-  const riderName = document.querySelector(".standings .riderPole .riderName");
-  const riderTeam = document.querySelector(".standings .riderPole .riderTeam");
-  const riderPoint = document.querySelector(
-    ".standings .riderPole .riderPoint"
-  );
-  const riderCountry = document.querySelector(".standings .riderPole");
-
-  if (iTCN == "sbk") {
-    console.log("sbk");
-  } else if (iTCN == "ssp") {
-    console.log("ssp");
-  } else if (iTCN == "ssp300") {
-    console.log("ssp300");
-  }
-});
-// superpole
-// bestlap
-// End of - Info click event
-
-// Sistem perubahan rider pole pada info
-// End of - Sistem perubahan rider pole pada info
-
-standings.addEventListener("click", function (e) {});
-// ---------- End of - Info content
 
 // -------------------- End of - ARTICLES
