@@ -25,6 +25,7 @@ articles.addEventListener("click", function (e) {
 
   // Sistem perubahan warna menu pada info
   function previousMenu() {
+    // for info menu
     if (
       e.target.previousElementSibling.className.includes("infoMenuSelected")
     ) {
@@ -33,8 +34,16 @@ articles.addEventListener("click", function (e) {
     if (e.target.previousElementSibling.className.includes("menuBgGreen")) {
       e.target.previousElementSibling.classList.toggle("menuBgGreen");
     }
+    // for round schedule
+    if (
+      e.target.previousElementSibling.className.includes("scheduleMenuSelected")
+    ) {
+      e.target.previousElementSibling.classList.toggle("scheduleMenuSelected");
+    }
   }
+
   function previousPreviousMenu() {
+    // for info menu
     if (
       e.target.previousElementSibling.previousElementSibling.className.includes(
         "infoMenuSelected"
@@ -44,8 +53,20 @@ articles.addEventListener("click", function (e) {
         "infoMenuSelected"
       );
     }
+    // for round schedule
+    if (
+      e.target.previousElementSibling.previousElementSibling.className.includes(
+        "scheduleMenuSelected"
+      )
+    ) {
+      e.target.previousElementSibling.previousElementSibling.classList.toggle(
+        "scheduleMenuSelected"
+      );
+    }
   }
+
   function nextMenu() {
+    // for info menu
     if (e.target.nextElementSibling.className.includes("infoMenuSelected")) {
       e.target.nextElementSibling.classList.toggle("infoMenuSelected");
     }
@@ -55,8 +76,16 @@ articles.addEventListener("click", function (e) {
     if (e.target.nextElementSibling.className.includes("menuBgPurple")) {
       e.target.nextElementSibling.classList.toggle("menuBgPurple");
     }
+    // for round schedule
+    if (
+      e.target.nextElementSibling.className.includes("scheduleMenuSelected")
+    ) {
+      e.target.nextElementSibling.classList.toggle("scheduleMenuSelected");
+    }
   }
+
   function nextNextMenu() {
+    // for info menu
     if (
       e.target.nextElementSibling.nextElementSibling.className.includes(
         "infoMenuSelected"
@@ -73,6 +102,16 @@ articles.addEventListener("click", function (e) {
     ) {
       e.target.nextElementSibling.nextElementSibling.classList.toggle(
         "menuBgPurple"
+      );
+    }
+    // for round schedule
+    if (
+      e.target.nextElementSibling.nextElementSibling.className.includes(
+        "scheduleMenuSelected"
+      )
+    ) {
+      e.target.nextElementSibling.nextElementSibling.classList.toggle(
+        "scheduleMenuSelected"
       );
     }
   }
@@ -93,6 +132,69 @@ articles.addEventListener("click", function (e) {
     nextNextMenu();
   }
   // End of - sistem perubahan warna menu pada info
+
+  // Sistem perubahan schedule pada round
+  function addSchedule(start, end, bikeClass) {
+    return `<div class="scheduleList">
+    <div class="time timeStart">${start}</div>
+    <div class="time timeEnd">${end}</div>
+    <div class="class">${bikeClass}</div>
+    <div class="live"><i class="fa-sharp fa-solid fa-play"></i></div>
+    </div>`;
+  }
+
+  const schedule = document.querySelector(".round .schedule");
+  // const scheduleList = Array.from(document.querySelectorAll(".scheduleList"));
+
+  if (articleTCN == "saturday") {
+    // saturday
+    e.target.classList.toggle("scheduleMenuSelected");
+    previousMenu();
+    nextMenu();
+    // ex : ${addSchedule("","","")}
+    schedule.innerHTML = `
+    ${addSchedule("10:50", "11:20", "WorldSBK - FP3")}
+    ${addSchedule("12:25", "12:45", "WorldSSP - Superpole")}
+    ${addSchedule("13:10", "13:25", "WorldSBK - Superpole")}
+    ${addSchedule("14:30", "", "WorldSSP - Race 1")}
+    ${addSchedule("", "", "WorldSBK - Race 1")}`;
+  }
+  // sunday
+  else if (articleTCN == "sunday") {
+    e.target.classList.toggle("scheduleMenuSelected");
+    previousMenu();
+    previousPreviousMenu();
+    schedule.innerHTML = `
+    ${addSchedule("10:30", "10:45", "WorldSBK - WUP")}
+    ${addSchedule("10:55", "", "WorldSSP - WUP")}
+    ${addSchedule("13:00", "", "WorldSBK - Superpole Race")}
+    ${addSchedule("14:30", "", "WorldSSP Race 2")}
+    ${addSchedule("16:00", "", "WorldSBK - Race 2")}`;
+  }
+  // friday
+  else if (articleTCN == "friday") {
+    e.target.classList.toggle("scheduleMenuSelected");
+    nextMenu();
+    nextNextMenu();
+    schedule.innerHTML = `
+    ${addSchedule("10:30", "11:15", "WorldSSP - FP1")}
+    ${addSchedule("11:30", "12:15", "WorldSBK - FP1")}
+    ${addSchedule("15:00", "15:45", "WorldSSP - FP2")}
+    ${addSchedule("16:00", "16:45", "WorldSBK - FP2")}`;
+  }
+
+  // Time schedule changer // Belum dikerjakan
+  let time = Array.from(document.querySelectorAll(".scheduleList .time")).map(
+    (t) => t.innerText
+  );
+  let jam = time.map((t) => t.split(":")[0]);
+  let menit = time.map((t) => t.split(":")[1]);
+
+  if (articleTCN == "myTime") {
+  } else if ((articleTCN = "localTime")) {
+  }
+
+  // End of - Sistem perubahan schedule pada round
 
   // sistem perubahan rider pole
   function addRider(flag, riderName, riderTeam) {
@@ -228,43 +330,3 @@ articles.addEventListener("click", function (e) {
 // End of - Articles click event
 
 // -------------------- End of - ARTICLES
-
-// let ahmaludin = {
-//   flag: "id",
-//   rider: this,
-//   team: "kawasaki",
-// };
-
-// function addRider(rider, riderPoint) {
-//   `<span class="riderName"><span class="fi fi-${rider.flag}"></span> ${rider.rider}</span>
-//     <span class="riderTeam">${rider.team}</span>
-//     <span class="riderPoint">${rider.point}</span>`;
-// }
-
-// console.log(addRider("ahmaludin", "10"));
-//
-// function ucapkanSalam(waktu) {
-//   return function (nama) {
-//     console.log(`hi ${nama}, selamat ${waktu}`);
-//   };
-// }
-
-// let pagi = ucapkanSalam("pagi");
-// pagi("amal");
-
-//
-
-// const standingsRPL = document.querySelector(".standings .riderPoleList");
-
-// function addRider(flag, riderName, riderTeam) {
-//   return (
-//     riderPoint
-//   ) => `<span class="riderName"><span class="fi fi-${flag}"></span> ${riderName}</span>
-//   <span class="riderTeam">${riderTeam}</span>
-//   <span class="riderPoint">${riderPoint}</span>`;
-// }
-
-// let ahmaludin = addRider("id", "Ahmaludin", "kawasaki");
-// // ahmaludin("10");
-
-// standingsRPL.innerHTML = ahmaludin("10");
