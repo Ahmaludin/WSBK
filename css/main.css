@@ -306,7 +306,7 @@ body {
   margin: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-areas: "0 1 round 2" "3 4 5 n1" "standings 6 7 8" "spiredRider superpole 9 10" "bestLap 11 n2 12" "13 14 15 16";
+  grid-template-areas: "0 1 round 2" "3 4 5 n1" "standings 6 7 8" "spiredRider superpole 9 10" "bestLap 11 n2 12" "13 14 15 16" "17 loadMoreBtn loadMoreBtn  20";
   -moz-column-gap: 2rem;
        column-gap: 2rem;
   row-gap: 1rem;
@@ -400,9 +400,7 @@ body {
   text-align: center;
 }
 .contArticle .articles .round .timeChanger .localTime,
-.contArticle .articles .round .timeChanger .myTime,
-.contArticle .articles .round .timeChanger input,
-.contArticle .articles .round .timeChanger label {
+.contArticle .articles .round .timeChanger .myTime {
   cursor: pointer;
 }
 .contArticle .articles .round .timeChanger input[type=radio] {
@@ -554,6 +552,20 @@ body {
 .contArticle .articles article:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+.contArticle .articles .loadMoreBtn {
+  grid-area: loadMoreBtn;
+  margin: 30px auto;
+  padding: 8px 25%;
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+  background-color: #fff;
+  border: 1px solid #666;
+}
+.contArticle .articles .loadMoreBtn:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 .contArticle .articles .round {
   grid-area: round;
 }
@@ -574,4 +586,62 @@ body {
 }
 .contArticle .articles .noneDisplay2 {
   grid-area: n2;
+}
+
+.sponsors {
+  max-width: 1100px;
+  margin: auto;
+  padding: 50px 1rem;
+}
+.sponsors .upSponsors {
+  display: flex;
+  justify-content: space-evenly;
+}
+.sponsors .title {
+  text-align: center;
+  color: #bdbdbd;
+  font-weight: bold;
+  font-size: 15px;
+  font-family: "supermolot", sans-serif;
+  position: relative;
+}
+.sponsors .title p {
+  padding-bottom: 8px;
+}
+.sponsors .title p:after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  color: transparent;
+  background-color: #bdbdbd;
+  margin: auto;
+  width: 200px;
+}
+.sponsors .sponsorList {
+  display: flex;
+  justify-content: space-evenly;
+}
+.sponsors .sponsorList img:hover {
+  outline: solid 1px #bdbdbd;
+  border-radius: 10px;
+}
+.sponsors .titleSponsor img,
+.sponsors .topSponsor img {
+  height: 30px;
+  margin: 15px 0;
+  padding: 30px 90px;
+}
+.sponsors .sponsorsAndAds img {
+  height: 30px;
+  margin-top: 30px;
+  padding: 15px 40px;
+}
+.sponsors .sponsorsAndAds .title p:after {
+  width: 350px;
+}
+.sponsors img {
+  width: 150px;
 }/*# sourceMappingURL=main.css.map */

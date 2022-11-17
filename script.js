@@ -157,7 +157,7 @@ articles.addEventListener("click", function (e) {
     ${addSchedule("12:25", "12:45", "WorldSSP - Superpole")}
     ${addSchedule("13:10", "13:25", "WorldSBK - Superpole")}
     ${addSchedule("14:30", "", "WorldSSP - Race 1")}
-    ${addSchedule("", "", "WorldSBK - Race 1")}`;
+    ${addSchedule("16:00", "", "WorldSBK - Race 1")}`;
   }
   // sunday
   else if (articleTCN == "sunday") {
@@ -184,15 +184,6 @@ articles.addEventListener("click", function (e) {
   }
 
   // Time schedule changer // Belum dikerjakan
-  let time = Array.from(document.querySelectorAll(".scheduleList .time")).map(
-    (t) => t.innerText
-  );
-  let jam = time.map((t) => t.split(":")[0]);
-  let menit = time.map((t) => t.split(":")[1]);
-
-  if (articleTCN == "myTime") {
-  } else if ((articleTCN = "localTime")) {
-  }
 
   // End of - Sistem perubahan schedule pada round
 
@@ -330,3 +321,27 @@ articles.addEventListener("click", function (e) {
 // End of - Articles click event
 
 // -------------------- End of - ARTICLES
+
+// -------------------- SPONSORS
+const sponsors = Array.from(document.querySelectorAll(".imgWrap img"));
+
+function sponsorsColor(i, src, pngSrc) {
+  sponsors[i].addEventListener("mouseover", function () {
+    sponsors[i].setAttribute("src", `img/${src}`);
+  });
+  sponsors[i].addEventListener("mouseout", function () {
+    sponsors[i].setAttribute("src", `img/${pngSrc}`);
+  });
+}
+
+sponsorsColor(0, "motul.jpg", "motul.png");
+sponsorsColor(1, "pirelli.jpg", "pirelli.png");
+sponsorsColor(2, "hyundai.jpg", "hyundai.png");
+sponsorsColor(3, "tissot.png", "tissotpng.png");
+sponsorsColor(4, "prosecco.png", "proseccopng.png");
+sponsorsColor(5, "pata.png", "patapng.png");
+sponsorsColor(6, "acerbis.png", "acerbispng.png");
+sponsorsColor(7, "prometeon.png", "prometeonpng.png");
+
+console.log(sponsors);
+// -------------------- End of - SPONSORS
