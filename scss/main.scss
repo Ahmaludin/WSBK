@@ -336,14 +336,6 @@ nav {
     margin: 20px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-areas:
-      "0 1 round 2"
-      "3 4 5 n1"
-      "standings 6 7 8"
-      "spiredRider superpole 9 10"
-      "bestLap 11 n2 12"
-      "13 14 15 16"
-      "17 loadMoreBtn loadMoreBtn  20";
     column-gap: 2rem;
     row-gap: 1rem;
     article,
@@ -609,92 +601,76 @@ nav {
     article:hover {
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
-    .loadMoreBtn {
-      grid-area: loadMoreBtn;
-      margin: 30px auto;
-      padding: 8px 25%;
+  }
+  .loadMoreBtn {
+    margin: 35px auto;
+    text-align: center;
+    button {
+      padding: 8px 150px;
       font-size: 14px;
       font-weight: bold;
       color: #666;
       background-color: #fff;
       border: 1px solid #666;
-    }
-    .loadMoreBtn:hover {
-      text-decoration: underline;
       cursor: pointer;
     }
-    .round {
-      grid-area: round;
-    }
-    .standings {
-      grid-area: standings;
-    }
-    .spiredRider {
-      grid-area: spiredRider;
-    }
-    .superpole {
-      grid-area: superpole;
-    }
-    .bestLap {
-      grid-area: bestLap;
-    }
-    .noneDisplay1 {
-      grid-area: n1;
-    }
-    .noneDisplay2 {
-      grid-area: n2;
+    .button:hover {
+      text-decoration: underline;
     }
   }
 }
 
 // SPONSORS
-.sponsors {
-  margin: auto;
-  padding: 50px 1rem;
-  .upSponsors {
-    display: flex;
-    justify-content: center;
-  }
-  .title {
-    text-align: center;
-    color: #bdbdbd;
-    font-weight: bold;
-    font-size: 15px;
-    font-family: "supermolot", sans-serif;
-    position: relative;
-    border-bottom: 1px solid #bdbdbd;
-    p {
-      padding-bottom: 8px;
+.contSponsors {
+  background-color: #fff;
+  .sponsors {
+    margin: auto;
+    padding: 50px 1rem;
+    .upSponsors {
+      display: flex;
+      justify-content: center;
     }
-  }
-  .sponsorList {
-    display: flex;
-    justify-content: center;
-    img:hover {
-      outline: solid 1px #bdbdbd;
-      border-radius: 10px;
+    .title {
+      text-align: center;
+      color: #bdbdbd;
+      font-weight: bold;
+      font-size: 15px;
+      font-family: "supermolot", sans-serif;
+      position: relative;
+      border-bottom: 1px solid #bdbdbd;
+      p {
+        padding-bottom: 8px;
+      }
     }
-  }
-  .titleSponsor,
-  .topSponsor {
+    .sponsorList {
+      display: flex;
+      justify-content: center;
+      img:hover {
+        outline: solid 1px #bdbdbd;
+        border-radius: 10px;
+      }
+    }
+    .titleSponsor,
+    .topSponsor {
+      img {
+        height: 30px;
+        margin: 15px 0;
+        padding: 30px 90px;
+      }
+    }
+    .sponsorsAndAds {
+      img {
+        height: 30px;
+        margin-top: 30px;
+        padding: 15px 40px;
+      }
+      .title p:after {
+        width: 350px;
+      }
+    }
     img {
-      height: 30px;
-      margin: 15px 0;
-      padding: 30px 90px;
+      width: 100px;
     }
-  }
-  .sponsorsAndAds {
-    img {
-      height: 30px;
-      margin-top: 30px;
-      padding: 15px 40px;
-    }
-    .title p:after {
-      width: 350px;
-    }
-  }
-  img {
-    width: 100px;
   }
 }
 
@@ -804,19 +780,14 @@ nav {
   .contArticle {
     .articles {
       grid-template-columns: repeat(3, 1fr);
-      grid-template-areas:
-        "0 1 round"
-        "2 3 4"
-        "5 n1 standings"
-        "6 7 8"
-        "spiredRider superpole 9"
-        "10 bestLap 11"
-        "n2 12 13"
-        "14 15 16"
-        "17 loadMoreBtn 18";
       .loadMoreBtn {
         width: max-content;
         padding: 8px 38.5%;
+      }
+    }
+    .loadMoreBtn {
+      button {
+        padding: 8px 148px;
       }
     }
   }
@@ -873,19 +844,19 @@ nav {
 
   .contArticle {
     width: 768px;
-
     .articles {
-      display: flex;
-      flex-direction: column;
+      grid-template-columns: repeat(2, 1fr);
       .loadMoreBtn {
         padding: 8px 80px;
       }
     }
   }
 
-  .sponsors {
-    .upSponsors {
-      flex-direction: column;
+  .contSponsors {
+    .sponsors {
+      .upSponsors {
+        flex-direction: column;
+      }
     }
   }
 
@@ -1098,20 +1069,33 @@ nav {
   .contArticle {
     width: 100%;
     .articles {
+      grid-template-columns: 1fr;
       .loadMoreBtn {
         margin-top: 10px;
         width: 100%;
       }
     }
+    .loadMoreBtn {
+      margin: 10px 0 35px;
+      padding: 0 20px;
+      button {
+        width: 100%;
+        padding: 15px 0;
+        font-size: 1rem;
+      }
+    }
   }
 
-  .sponsors {
+  .contSponsors {
     width: 100%;
-    .sponsorsAndAds {
-      .sponsorList {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        // justify-content: center;
+    margin: auto;
+    .sponsors {
+      width: 96.5%;
+      .sponsorsAndAds {
+        .sponsorList {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+        }
       }
     }
   }
@@ -1157,6 +1141,30 @@ nav {
           top: 10px;
           left: 15px;
           font-size: 1.1rem;
+        }
+      }
+    }
+  }
+
+  .contSponsors {
+    .sponsors {
+      width: 95%;
+      .titleSponsor {
+        img {
+          padding: 25px 90px;
+        }
+      }
+      .topSponsor {
+        .sponsorList {
+          display: grid;
+        }
+        img {
+          padding: 30px 60px;
+        }
+      }
+      .sponsorsAndAds {
+        img {
+          padding: 15px 5px;
         }
       }
     }
