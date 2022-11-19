@@ -312,7 +312,6 @@ nav .contNav3 .nav3 ul .bgMenuChanger {
   margin: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-areas: "0 1 round 2" "3 4 5 n1" "standings 6 7 8" "spiredRider superpole 9 10" "bestLap 11 n2 12" "13 14 15 16" "17 loadMoreBtn loadMoreBtn  20";
   -moz-column-gap: 2rem;
        column-gap: 2rem;
   row-gap: 1rem;
@@ -558,51 +557,35 @@ nav .contNav3 .nav3 ul .bgMenuChanger {
 .contArticle .articles article:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.contArticle .articles .loadMoreBtn {
-  grid-area: loadMoreBtn;
-  margin: 30px auto;
-  padding: 8px 25%;
+.contArticle .loadMoreBtn {
+  margin: 35px auto;
+  text-align: center;
+}
+.contArticle .loadMoreBtn button {
+  padding: 8px 150px;
   font-size: 14px;
   font-weight: bold;
   color: #666;
   background-color: #fff;
   border: 1px solid #666;
-}
-.contArticle .articles .loadMoreBtn:hover {
-  text-decoration: underline;
   cursor: pointer;
 }
-.contArticle .articles .round {
-  grid-area: round;
-}
-.contArticle .articles .standings {
-  grid-area: standings;
-}
-.contArticle .articles .spiredRider {
-  grid-area: spiredRider;
-}
-.contArticle .articles .superpole {
-  grid-area: superpole;
-}
-.contArticle .articles .bestLap {
-  grid-area: bestLap;
-}
-.contArticle .articles .noneDisplay1 {
-  grid-area: n1;
-}
-.contArticle .articles .noneDisplay2 {
-  grid-area: n2;
+.contArticle .loadMoreBtn .button:hover {
+  text-decoration: underline;
 }
 
-.sponsors {
+.contSponsors {
+  background-color: #fff;
+}
+.contSponsors .sponsors {
   margin: auto;
   padding: 50px 1rem;
 }
-.sponsors .upSponsors {
+.contSponsors .sponsors .upSponsors {
   display: flex;
   justify-content: center;
 }
-.sponsors .title {
+.contSponsors .sponsors .title {
   text-align: center;
   color: #bdbdbd;
   font-weight: bold;
@@ -611,32 +594,32 @@ nav .contNav3 .nav3 ul .bgMenuChanger {
   position: relative;
   border-bottom: 1px solid #bdbdbd;
 }
-.sponsors .title p {
+.contSponsors .sponsors .title p {
   padding-bottom: 8px;
 }
-.sponsors .sponsorList {
+.contSponsors .sponsors .sponsorList {
   display: flex;
   justify-content: center;
 }
-.sponsors .sponsorList img:hover {
+.contSponsors .sponsors .sponsorList img:hover {
   outline: solid 1px #bdbdbd;
   border-radius: 10px;
 }
-.sponsors .titleSponsor img,
-.sponsors .topSponsor img {
+.contSponsors .sponsors .titleSponsor img,
+.contSponsors .sponsors .topSponsor img {
   height: 30px;
   margin: 15px 0;
   padding: 30px 90px;
 }
-.sponsors .sponsorsAndAds img {
+.contSponsors .sponsors .sponsorsAndAds img {
   height: 30px;
   margin-top: 30px;
   padding: 15px 40px;
 }
-.sponsors .sponsorsAndAds .title p:after {
+.contSponsors .sponsors .sponsorsAndAds .title p:after {
   width: 350px;
 }
-.sponsors img {
+.contSponsors .sponsors img {
   width: 100px;
 }
 
@@ -727,13 +710,15 @@ nav .contNav3 .nav3 ul .bgMenuChanger {
   }
   .contArticle .articles {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "0 1 round" "2 3 4" "5 n1 standings" "6 7 8" "spiredRider superpole 9" "10 bestLap 11" "n2 12 13" "14 15 16" "17 loadMoreBtn 18";
   }
   .contArticle .articles .loadMoreBtn {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
     padding: 8px 38.5%;
+  }
+  .contArticle .loadMoreBtn button {
+    padding: 8px 148px;
   }
   .contFooter footer.footer {
     display: grid;
@@ -772,13 +757,12 @@ nav .contNav3 .nav3 ul .bgMenuChanger {
     width: 768px;
   }
   .contArticle .articles {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
   }
   .contArticle .articles .loadMoreBtn {
     padding: 8px 80px;
   }
-  .sponsors .upSponsors {
+  .contSponsors .sponsors .upSponsors {
     flex-direction: column;
   }
   .contFooter footer.footer,
@@ -965,14 +949,30 @@ nav .contNav2 .nav2 .left .login {
   .contArticle {
     width: 100%;
   }
+  .contArticle .articles {
+    grid-template-columns: 1fr;
+  }
   .contArticle .articles .loadMoreBtn {
     margin-top: 10px;
     width: 100%;
   }
-  .sponsors {
-    width: 100%;
+  .contArticle .loadMoreBtn {
+    margin: 10px 0 35px;
+    padding: 0 20px;
   }
-  .sponsors .sponsorsAndAds .sponsorList {
+  .contArticle .loadMoreBtn button {
+    width: 100%;
+    padding: 15px 0;
+    font-size: 1rem;
+  }
+  .contSponsors {
+    width: 100%;
+    margin: auto;
+  }
+  .contSponsors .sponsors {
+    width: 96.5%;
+  }
+  .contSponsors .sponsors .sponsorsAndAds .sponsorList {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -1015,6 +1015,21 @@ nav .contNav2 .nav2 .left .login {
     top: 10px;
     left: 15px;
     font-size: 1.1rem;
+  }
+  .contSponsors .sponsors {
+    width: 95%;
+  }
+  .contSponsors .sponsors .titleSponsor img {
+    padding: 25px 90px;
+  }
+  .contSponsors .sponsors .topSponsor .sponsorList {
+    display: grid;
+  }
+  .contSponsors .sponsors .topSponsor img {
+    padding: 30px 60px;
+  }
+  .contSponsors .sponsors .sponsorsAndAds img {
+    padding: 15px 5px;
   }
   .contFooter footer.footer,
 .contFooter footer.copyright {
