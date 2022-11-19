@@ -12,6 +12,21 @@ menuBtn.addEventListener("click", function () {
   menuList.classList.toggle("displayMenuList");
 });
 
+const nav1 = document.querySelector(".contNav1");
+const nav2 = document.querySelector(".contNav2 .right");
+const nav3 = document.querySelector(".contNav3");
+const mobileMenuBtn = document.querySelector(".nav2 .left .menu");
+
+mobileMenuBtn.addEventListener("click", function () {
+  nav1.classList.toggle("displayMenu");
+  nav2.classList.toggle("displayMenu");
+  nav3.classList.toggle("displayMenu");
+  mobileMenuBtn.classList.toggle("mobileBgMenuChanger");
+  mobileMenuBtn.firstElementChild.classList.toggle("fa-bars-staggered");
+  mobileMenuBtn.firstElementChild.classList.toggle("fa-xmark");
+});
+console.log();
+
 // -------------------- ARTICLES
 
 const articles = document.querySelector(".articles");
